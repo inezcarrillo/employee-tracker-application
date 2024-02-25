@@ -21,3 +21,62 @@ app.use( (req,res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on PORT ${PORT}`);
 });
+
+afterConnection = () => {
+    console.log('*************************')
+    console.log('*                       *')
+    console.log('*    EMPLOYEE MANAGER   *')
+    console.log('*                       *')
+    console.log('*************************')
+    promptUser();
+};
+
+const promptUser = () => {
+    inquirer.prompt ([
+        {
+            type: 'list',
+            name: 'choices',
+            message: 'What would you like do?',
+            choices: ['View all department',
+                    'View all roles',
+                    'View all employees',
+                    'Add a department',
+                    'Add a role',
+                    'Add an employee',
+                    'Update an employee role',
+                    'Update an employee manager',
+                    'No action',]
+        }
+    ])
+    .then((answer) => {
+        const { choices } = answers;
+
+        if (choices === 'View all department') {
+            showDepartments();
+        };
+        if (choices === 'View all roles') {
+            showRoles();
+        };
+        if (choices === 'View all employees') {
+            showEmployees();
+        };
+        if (choices === 'Add a department') {
+            addDepartment();
+        };
+        if (choices === 'Add a role') {
+            addRole();
+        };
+        if (choices === 'Add an employee') {
+            addEmployee();
+        };
+        if (choices === 'Update an employee role') {
+            updateEmployee();
+        };
+        if (choices === 'Update an employee manager') {
+            updateManager();
+        };
+        if (choices === 'No action') {
+            endConnection();
+        };
+    });
+};
