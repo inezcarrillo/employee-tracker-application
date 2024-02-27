@@ -72,11 +72,12 @@ const promptUser = () => {
         if (choices === 'Update an employee role') {
             updateEmployee();
         };
-        if (choices === 'Update an employee manager') {
-            updateManager();
-        };
         if (choices === 'No action') {
             endConnection();
         };
     });
 };
+
+showDepartments = () => {
+    console.log('Show all departemnts')
+}
