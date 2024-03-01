@@ -1,4 +1,4 @@
-const inquirer = require('inquirer');
+//const inquirer = require('inquirer');
 const mysql = require('myslq2');
 const express = require('express');
 
@@ -80,4 +80,13 @@ const promptUser = () => {
 
 showDepartments = () => {
     console.log('Show all departemnts')
-}
+};
+
+showRoles = () => {
+    console.log('Show all Roles')
+};
+
+showEmployees = () => {
+    console.log('Show all employees')
+};
+
